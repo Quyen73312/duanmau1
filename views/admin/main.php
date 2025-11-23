@@ -19,16 +19,16 @@
     <nav class="navbar navbar-expand-xxl bg-light justify-content-center">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link text-uppercase" href="<?= BASE_URL ?>"><b>Home</b></a>
+                <a class="nav-link text-uppercase" href="<?= BASE_URL_ADMIN ?>"><b>Home</b></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-uppercase" href="#"><b>Thống kê</b></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase" href="#"><b>Quản lý danh mục</b></a>
+                <a class="nav-link text-uppercase" href="<?= BASE_URL_ADMIN ?>&action=list-category"><b>Quản lý danh mục</b></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-uppercase" href="#"><b>Quản lý sản phẩm</b></a>
+                <a class="nav-link text-uppercase" href="<?= BASE_URL_ADMIN ?>&action=list-product"><b>Quản lý sản phẩm</b></a>  
             </li>
             <li class="nav-item">
                 <a class="nav-link text-uppercase" href="#"><b>Quản lý bình luận</b></a>

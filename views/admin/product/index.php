@@ -15,18 +15,20 @@
         <?php foreach($data as $pro) :?>
         <tr>
             <td><?= $pro["id"] ?></td>
-            <td>
+            <td>    
                 <img src="<?= BASE_ASSETS_UPLOADS . $pro["img"]?>" alt="" width="50" height="50">
             </td>
             <td><?= $pro["name"] ?></td>
-            <td><?= $pro["cat_name"] ?></td>
+            <td><?= $pro["cat_name"] ?></td>    
             <td><?= $pro["description"] ?></td>
             <td><?= $pro["price"] ?></td>
             <td><?= $pro["quantity"] ?></td>
             <td>
-                <button type="button" class="btn btn-primary">Xem</button>
-                <button type="button" class="btn btn-success">Sửa</button>
-                <button type="button" class="btn btn-danger">Xóa</button>
+               <a class="btn btn-info" href="<?= BASE_URL_ADMIN ?>&action=show-product&id=<?= $pro["id"] ?>">Xem</a>
+                <a class="btn btn-warning" href="<?= BASE_URL_ADMIN ?>&action=edit-product&id=<?= $pro["id"] ?>">Sửa</a>
+               <a class="btn btn-danger" href="<?= BASE_URL_ADMIN ?>&action=delete-product&id=<?= $pro["id"] ?>" onclick="return confirm('Xác nhận xóa: <?= $pro["name"] ?>?')">Xóa</a>
+               <a class="btn btn-success" href="<?= BASE_URL_ADMIN ?>&action=create-product">Thêm</a>
+                
             </td>
         </tr>
         <?php endforeach; ?>
