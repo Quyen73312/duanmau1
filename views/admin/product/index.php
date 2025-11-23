@@ -16,7 +16,7 @@
         <tr>
             <td><?= $pro["id"] ?></td>
             <td>
-                <img src="<?= BASE_ASSETS_UPLOADS. 'upload/sp1.png'?>" alt="" width="50">
+                <img src="<?= BASE_ASSETS_UPLOADS . $pro["img"]?>" alt="" width="50" height="50">
             </td>
             <td><?= $pro["name"] ?></td>
             <td><?= $pro["cat_name"] ?></td>

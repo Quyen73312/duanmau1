@@ -6,7 +6,7 @@ class ProductController
     public function __construct(){
         $this->modelProduct = new Product();
     }
-    public function home() {
+    public function dashboad() {
         $title = 'Đây là trang quản trị';
         require_once PATH_VIEW_MAIN_ADMIN;
     }

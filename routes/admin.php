@@ -4,7 +4,7 @@
 $action = $_GET['action'] ?? '/';
 
 match ($action) {
-    '/'         => (new ProductController)->home(),
+    '/'         => (new ProductController)->dashboad(),
       'list-product' => (new ProductController)->index(), // Hiển thị danh sách sản phẩm
     'delete-product' => '', // Xóa sản phẩm
     'show-product' => '', // Hiển thị chi tiết sản phẩm
