@@ -3,10 +3,19 @@
 class ProductController
 {
     public $modelProduct;
-
+    public function __construct(){
+        $this->modelProduct = new Product();
+    }
     public function home() {
         $title = 'Đây là trang quản trị';
-        require_once PATH_VIEW_ADMIN . 'main.php';
+        require_once PATH_VIEW_MAIN_ADMIN;
     }
-    
+    public function index() {
+        $view = 'product/index';
+        $title = 'Danh sách Sản phẩm';
+        // lấy danh sách từ csdl
+        $data = $this->modelProduct->getAll();
+        // var_dump($data);
+        require_once PATH_VIEW_MAIN_ADMIN;
+    }
 }
