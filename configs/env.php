@@ -1,7 +1,7 @@
 <?php
 
-define('BASE_URL',          'http://03_t4_web2041.03_web2041.test/');
-define('BASE_URL_ADMIN',          'http://03_t4_web2041.03_web2041.test/?mode=admin');
+define('BASE_URL',          'http://duanmau1/');
+define('BASE_URL_ADMIN',          'http://duanmau1/?mode=admin');
 
 define('PATH_ROOT',         __DIR__ . '/../');
 

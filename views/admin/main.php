@@ -21,6 +21,18 @@
             <li class="nav-item">
                 <a class="nav-link text-uppercase" href="<?= BASE_URL ?>"><b>Home</b></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#"><b>Thống kê</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#"><b>Quản lý danh mục</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#"><b>Quản lý sản phẩm</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-uppercase" href="#"><b>Quản lý bình luận</b></a>
+            </li>
         </ul>
     </nav>
 
