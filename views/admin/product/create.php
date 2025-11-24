@@ -13,7 +13,7 @@
             </div>
         <?php endif; ?>
 
-        <form action="<?= BASE_URL_ADMIN ?>&action=store-product" method="post">
+        <form action="<?= BASE_URL_ADMIN ?>&action=store-product" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label">Danh mục</label>
                 <select name="category_id" class="form-select">
@@ -44,9 +44,22 @@
                     <input type="text" name="quantity" class="form-control" value="<?= htmlspecialchars($old['quantity'] ?? '') ?>">
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label class="form-label">Tên file ảnh (ví dụ: sp1.jpg)</label>
-                    <input type="file" name="img" class="form-control" value="<?= htmlspecialchars($old['img'] ?? '') ?>">
+                    <label class="form-label">Ảnh sản phẩm</label>
+                    <input type="file" name="image" accept="image/*" class="form-control" id="imageInput">
+                    <div class="mt-2">
+                        <img id="imagePreview" src="" alt="Preview" style="max-width:120px; display:none;" />
+                    </div>
                 </div>
+                    <script>
+                    document.getElementById('imageInput')?.addEventListener('change', function(e){
+                        const f = e.target.files[0];
+                        const img = document.getElementById('imagePreview');
+                        if (!f) { img.style.display='none'; img.src=''; return; }
+                        const url = URL.createObjectURL(f);
+                        img.src = url;
+                        img.style.display = 'block';
+                    });
+                    </script>
             </div>
 
             <button class="btn btn-primary">Lưu</button>
