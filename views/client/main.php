@@ -38,15 +38,28 @@
             </div>
             <!-- Nội dung bên phải -->
             <div>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link"><?= htmlspecialchars($username ?? 'Khách') ?></a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Đăng xuất</a>
-                    </li>
+                 <ul class="navbar-nav">
+                    <?php if (!empty($_SESSION['user'])): ?>
+                        <!-- ✅ ĐÃ ĐĂNG NHẬP -->
+                        <li class="nav-item">
+                            <span class="nav-link text-primary fw-bold">
+                                Xin chào, <?= htmlspecialchars($_SESSION['user']['name']) ?>
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= BASE_URL ?>?action=logout" class="nav-link text-danger">Đăng xuất</a>
+                        </li>
+                    <?php else: ?>
+                        <!-- ✅ CHƯA ĐĂNG NHẬP -->
+                        <li class="nav-item">
+                            <a href="<?= BASE_URL ?>?action=login" class="nav-link">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= BASE_URL ?>?action=register" class="nav-link">Đăng ký</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
-            </div>
+            </div>  
         </div>
     </nav>
     

@@ -1,9 +1,6 @@
 <?php
-// Trang chủ - hiển thị slideshow và grid sản phẩm (4 cột)
-// Controller phải truyền: $slides (mảng slide) và $products (mảng sản phẩm)
 ?>
 <div class="container mt-3">
-    <!-- Slideshow (dùng Bootstrap carousel) -->
     <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <?php if (!empty($slides)): ?>
