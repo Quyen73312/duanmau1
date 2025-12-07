@@ -1,6 +1,14 @@
 <?php
 // Kiểm tra login có quyền vào trang admin không
 // TODO
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (empty($_SESSION['admin'])) {
+    header("Location: ../index.php?mode=admin");
+    exit;
+}
 $action = $_GET['action'] ?? '/';
 
 match ($action) {
@@ -19,6 +27,13 @@ match ($action) {
     'store-category' => (new CategoryController)->store(), // Lưu danh mục vào CSDL
     'edit-category'=> (new CategoryController)->edit(), // Hiển thị form cập nhật danh mục
     'update-category'=> (new CategoryController)->update(), // Lưu thông tin danh mục cập nhật vào CSDL
+    'list-user' => (new UserController)->index(), // Hiển thị danh sách tài khoản
+    'delete-user' => (new UserController)->delete(), // Xóa tài khoản
+    'show-user' => (new UserController)->show(), // Hiển thị chi tiết
+    'add-user' => (new UserController)->create(), // Hiển thị form tạo mới tài khoản
+    'store-user' => (new UserController)->store(), // Lưu tài khoản vào CSDL
+    'edit-user'=> (new UserController)->edit(), // Hiển thị form cập nhật tài khoản
+    'update-user'=> (new UserController)->update(), // Lưu
    
 
 };  

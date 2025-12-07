@@ -1,8 +1,7 @@
-<div class="card">
-    <div class="card-header d-flex justify-content-between align-items-center">
-        <h5 class="mb-0">Danh sách danh mục</h5>
-        <a class="btn btn-sm btn-primary" href="<?= BASE_URL_ADMIN ?>&action=create-category">Thêm mới</a>
-    </div>
+<a class="btn btn-success" href="<?= BASE_URL_ADMIN ?>&action=create-category">
+        + Thêm danh mục
+    </a>
+
     <div class="card-body p-0">
         <table class="table mb-0">
             <thead>

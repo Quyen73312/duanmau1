@@ -39,8 +39,14 @@
             <!-- Nội dung bên phải -->
             <div>
                  <ul class="navbar-nav">
+                     <?php if (!empty($_SESSION['admin'])): ?>
+                        
+                            <a href="<?= BASE_URL ?>?mode=admin" class="nav-link text-success">🔐 Trang quản trị</a>
+                        <?php endif; ?>
+
+                        </li>
                     <?php if (!empty($_SESSION['user'])): ?>
-                        <!-- ✅ ĐÃ ĐĂNG NHẬP -->
+                        <!--  ĐÃ ĐĂNG NHẬP -->
                         <li class="nav-item">
                             <span class="nav-link text-primary fw-bold">
                                 Xin chào, <?= htmlspecialchars($_SESSION['user']['name']) ?>
@@ -50,7 +56,7 @@
                             <a href="<?= BASE_URL ?>?action=logout" class="nav-link text-danger">Đăng xuất</a>
                         </li>
                     <?php else: ?>
-                        <!-- ✅ CHƯA ĐĂNG NHẬP -->
+                        <!--  CHƯA ĐĂNG NHẬP -->
                         <li class="nav-item">
                             <a href="<?= BASE_URL ?>?action=login" class="nav-link">Đăng nhập</a>
                         </li>
@@ -127,7 +133,7 @@
                                 <h5>Tên sản phẩm 01</h5>
                                 <span class="fw-bold"> 100.000 </span>
                             </div>
-                            <button class="btn btn-danger">Mua ngay</button>
+                            <a href="<?= BASE_URL ?>?action=detail&id=<?= $product['id'] ?>" class="btn btn-danger">Mua ngay</a>
                         </div>
                     </div>
                 </div>
@@ -135,6 +141,50 @@
         </div>
     </div>
     <!-- Hết nội dung -->
+    <footer class="bg-dark text-white pt-5">
+  <div class="container">
+    <div class="row">
+
+      <!-- Cột 1 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5 class="text-warning fw-bold">FASHION SHOP</h5>
+        <p class="small">
+          Chuyên cung cấp quần áo thời trang nam nữ, phong cách trẻ trung, hiện đại.
+        </p>
+        <p class="small mb-1"><strong>Hotline:</strong> 0988 888 888</p>
+        <p class="small"><strong>Email:</strong> fashionshop@gmail.com</p>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5 class="text-warning fw-bold">Hỗ trợ khách hàng</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none">Chính sách mua hàng</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Chính sách đổi trả</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Chính sách bảo mật</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Liên hệ</a></li>
+        </ul>
+      </div>
+
+      <!-- Cột 4 -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h5 class="text-warning fw-bold">Kết nối với chúng tôi</h5>
+        <div class="d-flex flex-column gap-2">
+          <a href="#" class="btn btn-outline-light btn-sm">Facebook</a>
+          <a href="#" class="btn btn-outline-light btn-sm">Instagram</a>
+          <a href="#" class="btn btn-outline-light btn-sm">TikTok</a>
+          <a href="#" class="btn btn-outline-light btn-sm">Shopee</a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary">
+
+    <!-- Bản quyền -->
+    <div class="text-center pb-3">
+      <small>© 2025 FASHION SHOP. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
 
 </body>
 

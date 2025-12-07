@@ -63,6 +63,7 @@ class Product extends BaseModel {
         $sql = "DELETE FROM {$this->table} WHERE id = :id";
         return $this->pdo_execute($sql, ['id' => $id]);
     }
+   
 
 }
 ?>

@@ -13,6 +13,7 @@ try {
         'do-login' => (new AuthController)->login(),
         'do-register' => (new AuthController)->register(),
         'logout' => (new AuthController)->logout(),
+        'detail' => (new HomeController)->detail(),
         default => (new HomeController)->index(),
     };
 } catch(Throwable $e){

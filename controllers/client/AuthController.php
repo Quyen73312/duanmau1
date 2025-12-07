@@ -44,12 +44,19 @@
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['is_main'] = $user['is_main'];
 
-                if ($user['is_main'] == 1) {
-                    header('Location: ' . BASE_URL_ADMIN);
+               if ($user['is_main'] == 1) {
+
+                    
+                    $_SESSION['admin'] = $user;
+
+                    header('Location: ' . BASE_URL);
+
                 } else {
                     header('Location: ' . BASE_URL);
                 }
                 exit();
+
+
             } else {
                 $_SESSION['login_error'] = "Email hoặc mật khẩu không chính xác.";
                 header('Location: ' . BASE_URL . '?action=login');
@@ -108,9 +115,18 @@
         }
 
         public function logout() {
-            session_start();
-            session_destroy();
-            header('Location: ' . BASE_URL . '?action=login');
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
+
+            unset($_SESSION['user']);
+            unset($_SESSION['admin']);
+            unset($_SESSION['user_id']);
+            unset($_SESSION['username']);
+            unset($_SESSION['is_main']);
+
+            header('Location: ' . BASE_URL);
             exit();
         }
+
     }
